@@ -1,0 +1,90 @@
+profit-n1 | 1 | Thin Snow | Timber Hollow Mountain Resort | Hospitality / ski resort
+profit-n2 | 2 | Hull Split | Murray Basin Almond Growers Cooperative | Agriculture / tree nuts
+profit-n3 | 2 | Billable Hours | Marlowe Dunn Architects | Professional services / architecture
+profit-n4 | 3 | Dealer Reserve | Pelican State Auto Finance | Financial services / auto lending
+profit-n5 | 4 | Direct to Doorstep | Maison Verhaegen | Consumer / premium confectionery
+cost-n1 | 1 | Box Plant | Tallgrass Packaging | Industrial / corrugated packaging
+cost-n2 | 2 | Administrative Weight | Whitcombe College | Education / private higher education
+cost-n3 | 2 | Turndown Service | Saltmarsh Hospitality Group | Hospitality / select-service hotels
+cost-n4 | 3 | Cloud Bill | Tessellate Analytics | TMT / B2B software
+cost-n5 | 4 | Mandatory Post | Merrimack Valley Regional Jail Authority | Public sector / corrections
+compete-n1 | 1 | Unlimited Wash | Sunburst Car Wash | Consumer services / car wash
+compete-n2 | 2 | Empty Units | Lockhaven Self Storage | Real estate / self-storage
+compete-n3 | 2 | Fixed Wireless | Shoreline Broadband | TMT / regional internet service provider
+compete-n4 | 3 | Partner Exodus | Greaves Whitlock CPAs | Professional services / accounting
+compete-n5 | 4 | Deep Water | Port of Calder Bay | Public sector / seaport authority
+turnaround-n1 | 1 | Last Aisle | Tumbleweed Toys | Consumer / specialty retail
+turnaround-n2 | 2 | Bed Count | Larkspur Behavioral Health | Healthcare / behavioral health provider
+turnaround-n3 | 2 | Dry Dock | Gulfport Marine Works | Industrial / ship repair
+turnaround-n4 | 3 | Bog Down | Marshfield Cranberry Cooperative | Agriculture / grower cooperative
+turnaround-n5 | 4 | Last Bell | Saint Columba Diocesan Schools | Nonprofit / K-12 education
+ops-n1 | 1 | Bay Time | Tenpenny Auto Service | Consumer services / automotive service
+ops-n2 | 2 | Harvest Line | Red River Valley Grain Terminal | Agriculture / grain handling
+ops-n3 | 2 | Docket Backlog | Carroway County Superior Court | Public sector / courts
+ops-n4 | 3 | Clear to Close | Sandpiper Home Loans | Financial services / mortgage origination
+ops-n5 | 4 | Plug Wait | Currentline Charging | Energy / EV charging infrastructure
+entry-n1 | 1 | Southern Shelf | Ashgrove Pet Nutrition | Consumer / pet food
+entry-n2 | 2 | Dry Hour Clinic | Tessaro Dialysis Group | Healthcare / outpatient dialysis
+entry-n3 | 2 | Second Harvest | Kaimana Agritech | Agriculture / controlled-environment farming
+entry-n4 | 3 | Dock to Door | Portside Reefer Lines | Logistics / refrigerated shipping
+entry-n5 | 4 | Open Enrollment | Bellwether Mutual Life | Financial services / life insurance
+invest-n1 | 1 | Cold Rows | Whitlock Farm Stores | Retail / farm and ranch supply
+invest-n2 | 2 | Own the Rails | Quillon Benefits Administration | Professional services / HR benefits administration
+invest-n3 | 2 | Letting Go | Ardent Media Group | Media / broadcasting and events
+invest-n4 | 3 | Twenty Megawatts | Caldera Battery Systems | Energy / grid-scale battery storage
+invest-n5 | 4 | Last Mile Shelter | Harborlight Housing Trust | Nonprofit / supportive housing
+ma-n1 | 1 | Two Taprooms | Ferrisburg Spirits Company | Consumer / distilled spirits
+ma-n2 | 2 | Shared Spectrum | Vireya Telecom | TMT / regional wireless carrier
+ma-n3 | 2 | Union Bakery | Corvallis Craft Bakeries | Consumer / industrial baking
+ma-n4 | 3 | Counting Beds | Strathmore Student Living | Real estate / student housing
+ma-n5 | 4 | Buying the Classroom | Pennant Learning | Education / K-12 curriculum and assessment
+pe-n1 | 1 | Roll the Dumpsters | Greyfield Capital Partners | Industrial services / waste collection
+pe-n2 | 2 | Tuition Carry | Oriel Growth Partners | Education / early childhood centers
+pe-n3 | 2 | Blades and Bolts | Westhollow Equity | Energy / wind turbine maintenance services
+pe-n4 | 3 | Shift Change | Tamarind Street Capital | Hospitality / select-service hotels
+pe-n5 | 4 | Clipped Wings | Arundel Infrastructure Fund | Transportation / regional airports
+sizing-n1 | 1 | Plug Count | Ridgecrest Charging Co. | Energy / EV charging infrastructure
+sizing-n2 | 2 | Uniform Season | Textilera Dos Ríos | Consumer / apparel (school uniforms)
+sizing-n3 | 2 | Rubber Miles | Fenwick Tire & Retread | Industrial / commercial truck tires
+sizing-n4 | 3 | Drive-Off | Veranda Credit Union | Financial services / consumer auto lending
+sizing-n5 | 4 | Almond Milk Run | Sol Abierto Agro | Agriculture / tree nuts and plant-based beverages
+industry-n1 | 1 | Locked Units | Stowaway Self Storage | Real estate / self-storage
+industry-n2 | 2 | Mid-Roll | Brightmoor Audio | Media / podcast networks and audio advertising
+industry-n3 | 2 | Cage-Free Count | Hollowell Farms | Agriculture / egg production
+industry-n4 | 3 | For the Record | Prosser Legal Reporting | Professional services / court reporting and litigation support
+industry-n5 | 4 | Offshore Bets | Sabine Pass Fabricators | Energy / offshore wind supply chain
+newbiz-n1 | 1 | Driveway Shine | Lustre Mobile Detailing | Consumer services / automotive care
+newbiz-n2 | 2 | Hot Work | Bevel Trades Institute | Education / for-profit vocational training
+newbiz-n3 | 2 | Pedal Cover | Nordlys Forsikring | Financial services / property & casualty insurance
+newbiz-n4 | 3 | Cold Chain, Short Hops | Frío Directo | Logistics / cold-chain last-mile distribution
+newbiz-n5 | 4 | Brand on the Hoof | Flint Hills Ranchers Cooperative | Agriculture / beef (cooperative launching a consumer brand)
+public-n1 | 1 | Quiet Stacks | Larkin County Library System | Public sector / public libraries
+public-n2 | 2 | Thirty Days Late | Tri-County Workforce Board | Public sector / workforce development
+public-n3 | 2 | One Big Check | Compass Rose Youth Mentoring | Nonprofit / youth services
+public-n4 | 3 | Dry Taps | Maji Safi Initiative | Nonprofit / international development (water and sanitation)
+public-n5 | 4 | Blue Bin Blues | City of Marrow Falls Department of Sanitation | Public sector / municipal solid waste and recycling
+unconv-n1 | 1 | Empty Galleries | Wexford Museum of Industry | Nonprofit / cultural institution (museum)
+unconv-n2 | 2 | New Ballpark | Salem Sawyers Baseball Club | Sports & entertainment / minor league baseball
+unconv-n3 | 2 | Three-Year Degree | Wendover College | Education / private liberal arts college
+unconv-n4 | 3 | Starting Line | City of Bellhaven | Public sector / city government (major event bid)
+unconv-n5 | 4 | Fewer Steeples | Diocese of Castlemere | Nonprofit / religious organization (diocesan footprint)
+sales-n1 | 1 | Quiet Showroom | Fenlow Mattress Company | Consumer / specialty retail
+sales-n2 | 2 | Leaky Bucket | Fernwood Lawn & Pest | Consumer services / home services
+sales-n3 | 2 | Empty Calendars | Corvid Analytics | TMT / B2B software
+sales-n4 | 3 | Full Tanks | Roadhouse Petroleum | Energy / fuel retail & convenience
+sales-n5 | 4 | Harvest Orders | Tollgate Seed Cooperative | Agriculture / seed & crop inputs
+growth-n1 | 1 | Second Tank | Hollister Aquatics | Consumer / pet specialty retail
+growth-n2 | 2 | Blocked Shots | Ravenna Sports Medicine | Healthcare / outpatient physical therapy
+growth-n3 | 2 | Crowded Pier | Thornbury Coastal Hotels | Hospitality / lodging
+growth-n4 | 3 | Off the Grid | Ashcombe Microgrids | Energy / distributed generation & storage
+growth-n5 | 4 | Exit Window | Gallatin Veterinary Partners | Healthcare services / veterinary (PE-owned)
+launch-n1 | 1 | Cold Brew Can | Dunmore Roasters | Consumer / packaged beverages
+launch-n2 | 2 | Lite Policy | Wexley Life Assurance | Financial services / life insurance
+launch-n3 | 2 | Bolt-On Hitch | Kessler Trailer Works | Industrial / commercial vehicle equipment
+launch-n4 | 3 | Weekend Degree | Linden College of Business | Education / private higher education
+launch-n5 | 4 | Own Label | Tidemark Freight Forwarding | Logistics / freight forwarding & customs brokerage
+pricing-n1 | 1 | Sticker Shock | Bramblewood Car Wash | Consumer services / automotive services
+pricing-n2 | 2 | Flat Fee | Ravensworth Accounting Group | Professional services / accounting & advisory
+pricing-n3 | 2 | Peak Load | Port Lavinia Marine Terminal | Logistics / port & terminal operations
+pricing-n4 | 3 | Rent Roll | Coldwater Self Storage | Real estate / self-storage
+pricing-n5 | 4 | Fare Box | Greater Tullamore Transit District | Public sector / regional transit
