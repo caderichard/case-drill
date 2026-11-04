@@ -6,6 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#15150F">
+<meta name="color-scheme" content="light">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-192.png">
@@ -20,7 +21,7 @@
  --r:16px;--sh:0 1px 2px rgba(0,0,0,.05),0 8px 24px -12px rgba(0,0,0,.18);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,system-ui,sans-serif;font-size:16px;line-height:1.35;-webkit-font-smoothing:antialiased}
+html,body{margin:0;color-scheme:light;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,system-ui,sans-serif;font-size:16px;line-height:1.35;-webkit-font-smoothing:antialiased}
 body{padding-bottom:calc(74px + env(safe-area-inset-bottom));overscroll-behavior-y:none}
 h1,h2,h3,.serif{font-family:Fraunces,Georgia,serif;font-weight:500;letter-spacing:-.01em;margin:0}
 button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
@@ -116,7 +117,8 @@ main{padding:16px;max-width:560px;margin:0 auto}
 .slot{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;background:var(--soft);font-size:14px}
 .slot .n{width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .slot.ok{background:#EAF8F0}.slot.bad{background:#FDECEB}
-textarea.ans{width:100%;min-height:120px;border:2px solid var(--line);border-radius:12px;padding:12px;font-size:15px;background:var(--card);resize:vertical;outline:none}
+textarea.ans,input{color:var(--ink)!important;-webkit-text-fill-color:var(--ink);caret-color:var(--ink);color-scheme:light}
+textarea.ans{width:100%;min-height:120px;border:2px solid var(--line);border-radius:12px;padding:12px;font-size:15px;background:#fff!important;resize:vertical;outline:none;-webkit-appearance:none;appearance:none}
 textarea.ans:focus{border-color:var(--ink)}
 .hint{font-size:12.5px;color:var(--mute);margin:-4px 0 10px}
 .fb{border-radius:14px;padding:14px;margin:12px 0}
