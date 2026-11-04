@@ -163,6 +163,24 @@ nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;st
 .seg button{flex:1;padding:8px;border-radius:10px;font-size:13px;font-weight:600;color:var(--mute)}
 .seg button.on{background:#fff;color:var(--ink);box-shadow:var(--sh)}
 .lock{font-size:12px;color:var(--mute);display:flex;align-items:center;gap:6px}
+
+ .opt .key,.chip .key{display:none}
+.kbd{display:none;font-size:12px;color:var(--mute);margin-top:8px}
+@media (min-width: 900px){
+ body{padding-bottom:40px;padding-left:220px}
+ #topwrap{left:220px}
+ main{max-width:760px;padding:28px 32px}
+ nav{top:0;bottom:0;left:0;right:auto;width:220px;flex-direction:column;justify-content:flex-start;border-top:0;border-right:1px solid var(--line);padding:24px 12px;gap:4px;background:var(--bg);backdrop-filter:none}
+ nav button{flex:0 0 auto;flex-direction:row;justify-content:flex-start;gap:12px;font-size:15px;padding:12px 14px;border-radius:12px;width:100%}
+ nav button.on{background:var(--soft)}
+ nav:before{content:"Case Drill";font-family:Fraunces,serif;font-size:22px;padding:4px 14px 18px;display:block;color:var(--ink)}
+ .opt{padding:15px 16px}
+ .opt .key,.chip .key{display:inline-flex;width:20px;height:20px;border-radius:5px;background:var(--soft);color:var(--mute);font-size:11px;font-weight:700;align-items:center;justify-content:center;margin-right:10px;vertical-align:middle}
+ .path{column-count:1}
+ .toast{bottom:40px}
+ .kbd{display:block}
+}
+font-size:12px;color:var(--mute);margin-top:8px}
 </style>
 </head>
 <body>
@@ -300,10 +318,10 @@ function renderPlay(){const q=P.qs[P.i];const t=q.t||P.t;const fam=t?t.fam:'eval
  let h=`<div class="fam-${fam}"><div class="playhead"><button class="ghost" onclick="quit()" style="color:var(--mute);font-size:22px;line-height:1">×</button><div class="prog"><i style="width:${P.i/P.qs.length*100}%"></i></div><span class="combo">${S.combo>=3?'×'+(S.combo>=6?2:1.5)+' '+S.combo+'🔥':''}</span></div>
  <div class="xs mute b" style="margin-bottom:4px">${esc(title)} · ${P.i+1}/${P.qs.length}</div>
  <div class="q"><span class="path">${q.path}</span>${q.prompt}</div><div id="qbody">`;
- if(q.kind==='mcq')h+=q.opts.map((o,i)=>`<button class="opt" onclick="ansMcq(${i})">${esc(o.t)}</button>`).join('');
- else if(q.kind==='build')h+=`<div class="slots" id="slots"></div><div class="chips" id="chips">${q.chips.map((c,i)=>`<button class="chip" data-i="${i}" onclick="chipTap(${i})">${esc(c)}</button>`).join('')}</div><button class="btn" id="chk" onclick="ansBuild()" disabled>Check</button>`;
- else if(q.kind==='select')h+=`<div class="chips" id="chips">${q.chips.map((c,i)=>`<button class="chip" data-i="${i}" onclick="chipSel(${i})">${esc(c)}</button>`).join('')}</div><button class="btn" id="chk" onclick="ansSelect()" disabled>Check</button>`;
- else if(q.kind==='type')h+=`<textarea class="ans" id="ta" placeholder="${q.lines?'One per line…':'Type here…'}" autocapitalize="off" autocorrect="off"></textarea><div class="hint">${q.hint||''}</div><button class="btn" id="chk" onclick="ansType()">Check</button>`;
+ if(q.kind==='mcq')h+=q.opts.map((o,i)=>`<button class="opt" onclick="ansMcq(${i})"><span class="key">${i+1}</span>${esc(o.t)}</button>`).join('')+`<div class="kbd">Keys 1–${q.opts.length} to answer · Enter for next</div>`;
+ else if(q.kind==='build')h+=`<div class="slots" id="slots"></div><div class="chips" id="chips">${q.chips.map((c,i)=>`<button class="chip" data-i="${i}" onclick="chipTap(${i})"><span class="key">${i+1}</span>${esc(c)}</button>`).join('')}</div><button class="btn" id="chk" onclick="ansBuild()" disabled>Check</button><div class="kbd">Keys 1–${q.chips.length} to add in order · Backspace undoes · Enter to check</div>`;
+ else if(q.kind==='select')h+=`<div class="chips" id="chips">${q.chips.map((c,i)=>`<button class="chip" data-i="${i}" onclick="chipSel(${i})"><span class="key">${i+1}</span>${esc(c)}</button>`).join('')}</div><button class="btn" id="chk" onclick="ansSelect()" disabled>Check</button><div class="kbd">Keys 1–${q.chips.length} to toggle · Enter to check</div>`;
+ else if(q.kind==='type')h+=`<textarea class="ans" id="ta" placeholder="${q.lines?'One per line…':'Type here…'}" autocapitalize="off" autocorrect="off"></textarea><div class="hint">${q.hint||''}</div><button class="btn" id="chk" onclick="ansType()">Check</button><div class="kbd">Ctrl/⌘ + Enter to check</div>`;
  h+=`</div><div id="fb"></div></div>`;$('#view').innerHTML=h;q._t0=now();P._sel=[];P._order=[];if(q.kind==='type')setTimeout(()=>{const ta=$('#ta');ta&&ta.focus();},50);window.scrollTo(0,0);}
 
 function chipTap(i){const q=P.qs[P.i];if(P._order.includes(i))return;P._order.push(i);const c=document.querySelector(`.chip[data-i="${i}"]`);c.classList.add('ghost');$('#slots').innerHTML=P._order.map((k,n)=>`<div class="slot"><span class="n">${n+1}</span>${esc(q.chips[k])}<button onclick="chipUndo(${k})" style="margin-left:auto;color:var(--mute)">×</button></div>`).join('');$('#chk').disabled=P._order.length!==q.answer.length;buzz(6);}
@@ -393,8 +411,20 @@ function stats(){const acc=S.totals.q?Math.round(S.totals.ok/S.totals.q*100):0;c
  let h=`<div class="card"><div class="stat"><div><b>${S.xp.toLocaleString()}</b><small>XP</small></div><div><b>${S.streak.n}</b><small>streak</small></div><div><b>${acc}%</b><small>accuracy</small></div><div><b>${nm}/18</b><small>mastered</small></div><div><b>${S.best}</b><small>best combo</small></div><div><b>${S.badges.length}</b><small>badges</small></div></div></div>`;
  h+=`<div class="card"><h3 style="font-size:16px;margin-bottom:8px">Mastery by framework</h3>${TYPES.map(t=>{const L=lv(t.id);const its=itemsFor(t);const known=its.filter(x=>S.items[x.id]&&S.items[x.id].iv>=2).length;const p=Math.round(known/its.length*100);const passed=Object.keys(L.passed).length;return `<div class="fam-${t.fam}" style="margin:8px 0"><div class="row sm"><span class="grow1">${esc(t.name)}</span><span class="mute xs">${passed}/6 stages · ${L.recall.length}/3 days</span></div><div class="meter"><i style="width:${p}%"></i></div></div>`;}).join('')}</div>`;
  h+=`<div class="card"><h3 style="font-size:16px;margin-bottom:8px">Badges</h3>${S.badges.length?S.badges.slice().reverse().map(b=>`<div class="badge"><div class="ic">★</div><div><b>${esc(b.title)}</b><div class="xs mute">${esc(b.desc)}</div></div></div>`).join(''):'<div class="sm mute">None yet.</div>'}</div>`;
- h+=`<div class="card"><h3 style="font-size:16px;margin-bottom:8px">Settings</h3><div class="row sm"><span class="grow1">Daily XP goal</span>${[100,150,250,400].map(g=>`<button class="chip ${S.daily.goal===g?'pick':''}" onclick="S.daily.goal=${g};save();go('stats')">${g}</button>`).join('')}</div><button class="btn ghost sm" style="margin-top:10px" onclick="if(confirm('Reset all progress?')){localStorage.removeItem('${KEY}');location.reload();}">Reset progress</button></div>`;
+ h+=`<div class="card"><h3 style="font-size:16px;margin-bottom:8px">Settings</h3><div class="row sm"><span class="grow1">Daily XP goal</span>${[100,150,250,400].map(g=>`<button class="chip ${S.daily.goal===g?'pick':''}" onclick="S.daily.goal=${g};save();go('stats')">${g}</button>`).join('')}</div><div class="sm b" style="margin-top:14px">Phone ↔ laptop</div><div class="xs mute" style="margin:2px 0 8px">Progress is saved per device. Export here, import on the other one.</div><div class="row"><button class="btn sec sm" onclick="exportProgress()">Export progress</button><button class="btn sec sm" onclick="importProgress()">Import</button></div><textarea id="xfer" class="ans hide" style="min-height:70px;font-size:11px;margin-top:8px" readonly></textarea><button class="btn ghost sm" style="margin-top:10px" onclick="if(confirm('Reset all progress?')){localStorage.removeItem('${KEY}');location.reload();}">Reset progress</button></div>`;
  $('#view').innerHTML=h;}
+
+/* keyboard (desktop) */
+document.addEventListener('keydown',e=>{if(!P||V!=='play')return;const q=P.qs[P.i];const answered=!!$('#fb').innerHTML;const inTA=document.activeElement&&document.activeElement.tagName==='TEXTAREA';
+ if(e.key==='Escape'){quit();return;}
+ if(e.key==='Enter'){if(answered){e.preventDefault();next();return;}if(inTA){if(e.metaKey||e.ctrlKey){e.preventDefault();ansType();}return;}const c=$('#chk');if(c&&!c.disabled&&!c.classList.contains('hide')){e.preventDefault();c.click();}return;}
+ if(inTA||answered)return;const n=parseInt(e.key);if(!n)return;
+ if(q.kind==='mcq'&&n<=q.opts.length)ansMcq(n-1);else if(q.kind==='build'&&n<=q.chips.length)chipTap(n-1);else if(q.kind==='select'&&n<=q.chips.length)chipSel(n-1);
+ if(e.key==='Backspace'&&q.kind==='build'&&P._order.length)chipUndo(P._order[P._order.length-1]);});
+document.addEventListener('keydown',e=>{if(e.key==='Backspace'&&P&&V==='play'&&P.qs[P.i].kind==='build'&&!$('#fb').innerHTML&&P._order.length&&document.activeElement.tagName!=='TEXTAREA'){e.preventDefault();chipUndo(P._order[P._order.length-1]);}});
+/* progress transfer */
+function exportProgress(){const code=btoa(unescape(encodeURIComponent(JSON.stringify(S))));const ta=$('#xfer');ta.value=code;ta.classList.remove('hide');ta.select();if(navigator.clipboard){navigator.clipboard.writeText(code).then(()=>toast('Progress code copied')).catch(()=>toast('Copy the code below'));}else toast('Copy the code below');}
+function importProgress(){const code=prompt('Paste a progress code from your other device:');if(!code)return;try{const o=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));if(o.xp===undefined)throw 0;if(o.xp<S.xp&&!confirm('That save has less XP than this one. Replace anyway?'))return;S=Object.assign({},DEF,o);save();toast('Progress imported');go('home');}catch(e){toast('That code didn’t work');}}
 
 /* ================= BOOT ================= */
 (function(){if(S.daily.date&&S.daily.date!==today()){/* new day: check streak break */const y=new Date(Date.now()-864e5).toISOString().slice(0,10);if(S.streak.last&&S.streak.last!==y&&S.streak.last!==today()){const y2=new Date(Date.now()-2*864e5).toISOString().slice(0,10);if(!(S.streak.last===y2&&S.streak.freeze>0))S.streak.n=0;}}

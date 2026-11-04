@@ -9,4 +9,6 @@ Host at any https URL (GitHub Pages: Settings → Pages → main / root). iPhone
 - XP with speed and combo multipliers, daily goal, streak with one freeze, ranks (Analyst → Senior Partner), badges, bonus rounds (numbers cold, brainstorm lens).
 - Progress lives in localStorage key `cd4` (fresh start from v3).
 
+**Desktop.** Same URL in any browser: at laptop widths the nav becomes a sidebar and the keyboard drives everything (1–4 answer/tap chips, Backspace undo, Enter check/next, Ctrl/⌘+Enter in text, Esc quit). Progress is per device — Stats → Export/Import moves a save between phone and laptop.
+
 Build: `python3 cd4/build.py` patches the 18 types with the gold standard and embeds data into `cd4/app4.html` → `index.html`. Bump the cache name in `sw.js` on every release.
