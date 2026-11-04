@@ -10,7 +10,7 @@ Host at any https URL (GitHub Pages: Settings → Pages → main / root). iPhone
 - **Coach tab:** weaknesses by type and rubric item, "ask the coach" weekly read, badges, settings.
 - **Three ways to run:** Claude-hosted artifact (live via your Claude account, progress synced through the artifact db), installed PWA with an Anthropic API key (live, pay-per-use), installed PWA offline. Progress key `cd5` (migrates `cd4`).
 
-Build: `python3 cd5/build5.py` assembles `cd5/head.html + core.js + modes.js` with data → `index.html` and `artifact_index.html` (no service worker). Bump the cache name in `sw.js` on every release.
+Build: `python3 src/build.py` assembles `src/head.html + core.js + modes.js` (gold standard in `src/standard.py`, v3 data in `src/data_v3.json`) with data → `index.html` and `artifact_index.html` (no service worker). Bump the cache name in `sw.js` on every release.
 
 **v4 (Nov 4, 2026).** Rebuilt around the locked gold-standard framework library (Nov 2, 2026).
 - Path of 18 levels: the 10 standard frameworks first, then the other 8 unlock behind them.
